@@ -1,0 +1,9 @@
+<div class="app-login">
+    <div *ngIf="(wait)">
+        Ожидание
+    </div>
+
+    <div (click)="login()" *ngIf="(!wait)" class="button">
+        facebook
+    </div>
+</div>

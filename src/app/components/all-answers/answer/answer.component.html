@@ -1,0 +1,31 @@
+<div class="row app-answer" [ngClass]="{current: current}">
+    <div class="col-md-2">
+        <img [src]="answer.user.photo" alt="">
+    </div>
+
+    <div class="col-md-6">
+        <div class="text">
+            {{ answer.user.name }}
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="text">
+            <div *ngIf="answer.willCome">
+                Придет
+            </div>
+
+            <div *ngIf="!answer.willCome">
+                Не придет
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <span *ngIf="answer.withUserCount && answer.willCome">
+            <div class="text">
+                {{ answer.withUserCount }}
+            </div>
+        </span>
+    </div>
+</div>

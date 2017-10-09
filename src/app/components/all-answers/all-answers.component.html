@@ -1,0 +1,20 @@
+<div class="app-all-answers">
+    <div class="find">
+        <input class="form-control" type="text" placeholder="Искать"
+               [(ngModel)]="searchStr">
+    </div>
+
+    <div *ngFor="let answer of getAnswers()" class="container">
+        <app-answer
+                (click)="openDelModal(answer)"
+                [current]="(answer.user.id === auth.getUser().id)"
+                [answer]="answer"></app-answer>
+    </div>
+
+    <div *ngIf="deleteAnswer">
+        <app-del-answer
+                (modalResult)="modalResult($event)"
+                [userName]="deleteAnswer.user.name"></app-del-answer>
+    </div>
+</div>
+
